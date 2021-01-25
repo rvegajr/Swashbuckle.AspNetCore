@@ -22,6 +22,7 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             RequestBodyFilters = new List<IRequestBodyFilter>();
             OperationFilters = new List<IOperationFilter>();
             DocumentFilters = new List<IDocumentFilter>();
+            IgnoreHttpAttributeMissing = false;
         }
 
         public IDictionary<string, OpenApiInfo> SwaggerDocs { get; set; }
@@ -29,6 +30,8 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
         public Func<string, ApiDescription, bool> DocInclusionPredicate { get; set; }
 
         public bool IgnoreObsoleteActions { get; set; }
+
+        public bool IgnoreHttpAttributeMissing { get; set; }
 
         public Func<IEnumerable<ApiDescription>, ApiDescription> ConflictingActionsResolver { get; set; }
 

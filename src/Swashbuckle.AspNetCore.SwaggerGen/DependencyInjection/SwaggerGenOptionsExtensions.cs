@@ -45,6 +45,15 @@ namespace Microsoft.Extensions.DependencyInjection
             swaggerGenOptions.SwaggerGeneratorOptions.IgnoreObsoleteActions = true;
         }
 
+
+        /// <summary>
+        /// Ignore any actions that are decorated with the IgnoreHttpAttributeMissing
+        /// </summary>
+        public static void IgnoreHttpAttributeMissing(this SwaggerGenOptions swaggerGenOptions)
+        {
+            swaggerGenOptions.SwaggerGeneratorOptions.IgnoreHttpAttributeMissing = true;
+        }
+
         /// <summary>
         /// Merge actions that have conflicting HTTP methods and paths (must be unique for Swagger 2.0)
         /// </summary>
