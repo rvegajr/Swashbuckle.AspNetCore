@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace NetCore21
 {
@@ -49,15 +48,9 @@ namespace NetCore21
 
             app.UseMvc();
 
-            // Expose v2 and v3 Swagger/OpenAPI formats
-            app.UseSwagger(new SwaggerOptions
+            app.UseSwagger(c =>
             {
-                RouteTemplate = "/swagger/{documentName}/swagger.json",
-                SerializeAsV2 = true
-            });
-            app.UseSwagger(new SwaggerOptions
-            {
-                RouteTemplate = "/swagger/{documentName}/openapi.json",
+                c.SerializeAsV2 = true;
             });
 
             app.UseSwaggerUI();

@@ -2,11 +2,7 @@
 
 namespace Swashbuckle.AspNetCore.Annotations
 {
-    [AttributeUsage(
-        AttributeTargets.Class |
-        AttributeTargets.Struct |
-        AttributeTargets.Enum,
-        AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false)]
     public class SwaggerSchemaFilterAttribute : Attribute
     {
         public SwaggerSchemaFilterAttribute(Type type)

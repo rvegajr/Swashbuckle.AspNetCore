@@ -40,14 +40,5 @@ namespace Basic.Controllers
     {
         [SwaggerSchema("The cart identifier", ReadOnly = true)]
         public int Id { get; set; }
-
-        public CartType CartType { get; set; }
-    }
-
-    [SwaggerSchema(Description = "The cart type")]
-    public enum CartType
-    {
-        Anonymous,
-        Authenticated
     }
 }
